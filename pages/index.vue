@@ -38,7 +38,15 @@
 </template>
 <script setup lang="ts">
 import axios from 'axios'
+import { io } from 'socket.io-client'
+
 const websites = ref([])
+
+const socket = io('http://localhost:3333')
+
+socket.on('news', (news: { hello: string }) => {
+  console.log(news)
+})
 
 const getWebsites = async () => {
   const res = await axios.get('http://localhost:3333/websites')
