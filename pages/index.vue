@@ -1,5 +1,5 @@
 <template>
-  <div class="p-5 bg-white dark:bg-gray-900 antialiased">
+  <div class="p-5 bg-white dark:bg-gray-900 antialiased text-white">
     <form>
       <div class="mb-6">
         <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
@@ -29,7 +29,20 @@
         Submit
       </button>
     </form>
+    <ul>
+      <li v-for="website in websites" :key="website.id">
+        {{ website.name }}, {{ website.domain }}, visitor: 0
+      </li>
+    </ul>
   </div>
 </template>
 <script setup lang="ts">
+import axios from 'axios'
+const websites = ref([])
+
+const getWebsites = async () => {
+  const res = await axios.get('http://localhost:3333/websites')
+  websites.value = res.data
+}
+getWebsites()
 </script>

@@ -2,6 +2,14 @@
 import { siteUrl } from './utils/app.infos'
 
 export default defineNuxtConfig({
+  app: {
+    head: {
+      script: [
+        { src: 'http://localhost:3333/tracker.js?id=4' }
+      ]
+
+    }
+  },
   ssr: true,
   typescript: {
     strict: true,
