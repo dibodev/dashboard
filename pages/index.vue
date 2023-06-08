@@ -48,7 +48,7 @@ type Website = {
 
 const websites = ref([] as Website[])
 
-const socket = io('http://localhost:3333')
+const socket = io(apiUrl)
 
 socket.on('news', (news: { hello: string }) => {
   console.log(news)
@@ -58,7 +58,7 @@ socket.on('current-visitors', (visitors: number) => {
 })
 
 const getWebsites = async () => {
-  const res = await axios.get('http://localhost:3333/websites')
+  const res = await axios.get(`${apiUrl}/websites`)
   websites.value = res.data
 }
 getWebsites()

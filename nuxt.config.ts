@@ -1,11 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import { siteUrl } from './utils/app.infos'
+import { siteUrl, apiUrl } from './utils/app.infos'
 
 export default defineNuxtConfig({
   app: {
     head: {
       script: [
-        { src: 'http://localhost:3333/tracker.js?id=1' }
+        { src: `${apiUrl}/tracker.js?id=1` }
       ]
 
     }
@@ -71,7 +71,7 @@ export default defineNuxtConfig({
       alwaysRedirect: true,
       useCookie: true,
       cookieKey: 'i18n_redirected',
-      redirectOn: 'root'
+      redirectOn: 'all'
     }
   },
   devtools: {
