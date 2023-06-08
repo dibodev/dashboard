@@ -51,22 +51,26 @@ const websites = ref([] as Website[])
 
 console.log({
   apiUrl,
+  env: import.meta.env,
+  envv: process.env,
   apiUrll,
   apiUrlt: import.meta.env.VITE_API_URL
 })
 
-const socket = io(apiUrl)
+if (apiUrl) {
+  const socket = io(apiUrl)
 
-socket.on('news', (news: { hello: string }) => {
-  console.log(news)
-})
-socket.on('current-visitors', (visitors: number) => {
-  console.log(visitors)
-})
+  socket.on('news', (news: { hello: string }) => {
+    console.log(news)
+  })
+  socket.on('current-visitors', (visitors: number) => {
+    console.log(visitors)
+  })
 
-const getWebsites = async () => {
-  const res = await axios.get(`${apiUrl}/websites`)
-  websites.value = res.data
+  const getWebsites = async () => {
+    const res = await axios.get(`${apiUrl}/websites`)
+    websites.value = res.data
+  }
+  getWebsites()
 }
-getWebsites()
 </script>
