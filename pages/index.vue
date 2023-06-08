@@ -39,7 +39,6 @@
 <script setup lang="ts">
 import axios from 'axios'
 import { io } from 'socket.io-client'
-import { apiUrl as apiUrll } from '~/utils/app.infos'
 
 type Website = {
     id: number
@@ -48,14 +47,6 @@ type Website = {
 }
 
 const websites = ref([] as Website[])
-
-console.log({
-  apiUrl,
-  env: import.meta.env,
-  envv: process.env,
-  apiUrll,
-  apiUrlt: import.meta.env.VITE_API_URL
-})
 
 if (apiUrl) {
   const socket = io(apiUrl)
