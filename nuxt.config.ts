@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   app: {
     head: {
       script: [
-        { src: 'http://localhost:3333/tracker.js?id=4' }
+        { src: 'http://localhost:3333/tracker.js?id=1' }
       ]
 
     }
