@@ -39,14 +39,21 @@
 <script setup lang="ts">
 import axios from 'axios'
 import { io } from 'socket.io-client'
+import { apiUrl as apiUrll } from '~/utils/app.infos'
 
 type Website = {
-  id: number
-  name: string
-  domain: string
+    id: number
+    name: string
+    domain: string
 }
 
 const websites = ref([] as Website[])
+
+console.log({
+  apiUrl,
+  apiUrll,
+  apiUrlt: import.meta.env.VITE_API_URL
+})
 
 const socket = io(apiUrl)
 
