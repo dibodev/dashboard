@@ -40,7 +40,13 @@
 import axios from 'axios'
 import { io } from 'socket.io-client'
 
-const websites = ref([])
+type Website = {
+  id: number
+  name: string
+  domain: string
+}
+
+const websites = ref([] as Website[])
 
 const socket = io('http://localhost:3333')
 
