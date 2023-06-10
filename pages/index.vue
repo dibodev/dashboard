@@ -40,6 +40,13 @@
 import axios from 'axios'
 import { io } from 'socket.io-client'
 
+definePageMeta({
+  nuxtI18n: {
+    en: true,
+    fr: true
+  }
+})
+
 type Website = {
     id: number
     name: string

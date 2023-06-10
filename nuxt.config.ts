@@ -25,6 +25,9 @@ export default defineNuxtConfig({
     'nuxt-simple-robots',
     '@nuxtjs/google-fonts'
   ],
+  sitemap: {
+    autoAlternativeLangPrefixes: ['en']
+  },
   googleFonts: {
     families: {
       Rubik: true
@@ -45,7 +48,7 @@ export default defineNuxtConfig({
   },
   i18n: {
     lazy: true,
-    strategy: 'prefix',
+    strategy: 'prefix_except_default',
     langDir: 'locales',
     locales: [
       {
@@ -67,7 +70,6 @@ export default defineNuxtConfig({
     ],
     defaultLocale: 'fr',
     detectBrowserLanguage: {
-      fallbackLocale: 'fr',
       alwaysRedirect: true,
       useCookie: true,
       cookieKey: 'i18n_redirected',
