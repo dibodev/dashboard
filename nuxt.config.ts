@@ -5,7 +5,10 @@ export default defineNuxtConfig({
   app: {
     head: {
       script: [
-        { src: `${apiUrl}/tracker.js?id=1` }
+        {
+          src: `${apiUrl}/analytics.js`,
+          'data-project-id': 1
+        }
       ]
 
     }
@@ -19,14 +22,13 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
     '@pinia/nuxt',
-    '@nuxtjs/plausible',
     '@nuxtjs/i18n',
     'nuxt-simple-sitemap',
     'nuxt-simple-robots',
     '@nuxtjs/google-fonts'
   ],
   sitemap: {
-    autoAlternativeLangPrefixes: ['en']
+    // xsl: false
   },
   googleFonts: {
     families: {
@@ -46,7 +48,10 @@ export default defineNuxtConfig({
       siteUrl
     }
   },
+  plugins: [
+  ],
   i18n: {
+    baseUrl: siteUrl,
     lazy: true,
     strategy: 'prefix_except_default',
     langDir: 'locales',
@@ -72,8 +77,8 @@ export default defineNuxtConfig({
     detectBrowserLanguage: {
       alwaysRedirect: true,
       useCookie: true,
-      cookieKey: 'i18n_redirected',
-      redirectOn: 'all'
+      cookieKey: 'dibodev-lang',
+      redirectOn: 'root'
     }
   },
   devtools: {

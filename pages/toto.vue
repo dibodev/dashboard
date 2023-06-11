@@ -129,6 +129,7 @@
                 </div>
             </div>
         </div>
+        <img src="/chien.jpg" alt="photo de chien">
     </div>
 </template>
 <script setup>

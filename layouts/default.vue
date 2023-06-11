@@ -163,9 +163,9 @@
           </div>
         </aside>
 
-        <div class="sm:ml-64">
+        <main class="sm:ml-64">
           <slot />
-        </div>
+        </main>
       </Body>
     </Html>
   </div>
@@ -202,4 +202,9 @@ const _localeProperties = computed(() => localeProperties.value) as ComputedRef<
 const lang = computed(() => head.value.htmlAttrs?.lang || _localeProperties.value.iso || 'fr')
 const dir = computed(() => head.value.htmlAttrs?.dir || _localeProperties.value.dir || 'ltr')
 const title = computed(() => t('pages_tiles.home'))
+
+const { locale } = useI18n()
+const switchLocalePath = useSwitchLocalePath()
+switchLocalePath('es')
+console.log(locale.value)
 </script>

@@ -1,4 +1,7 @@
 {
   "change_language": "cambiar idioma",
-  "city": "ciudad"
+  "city": "ciudad",
+  "pages_tiles": {
+    "home": "Domov"
+  }
 }
