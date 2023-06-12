@@ -5,13 +5,13 @@
         <div class="w-full flex items-center justify-between space-x-4">
           <img :src="favicon"
                :alt="`${props.domain} favicon`"
-               class="w-4 h-4 flex-shrink-0 mt-px"
-          >
+               class="w-4 h-4 flex-shrink-0 mt-px">
           <div class="flex-1 -mt-px w-full">
             <h3 class="text-gray-900 text-lg truncate dark:text-gray-100">
-{{ props.domain }}
-</h3>
+              {{ props.domain }}
+            </h3>
           </div>
+          <PulsatingCircle/>
         </div>
         <div class="pl-8 mt-2 flex items-center justify-between">
               <span class="text-gray-600 dark:text-gray-400 text-sm truncate">
@@ -27,6 +27,8 @@
 
 <script lang="ts" setup>
 /* PROPS */
+import PulsatingCircle from '~/components/ui/PulsatingCircle.vue'
+
 const props = defineProps({
   domain: {
     type: String,
