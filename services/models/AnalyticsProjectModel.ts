@@ -7,11 +7,13 @@ export default class AnalyticsProjectModel extends BaseModel {
   id: number
   domain: string
   favicon: string | null
+  active?: boolean = false
 
-  constructor (id: number, domain: string, favicon: string, createdAt: string, updatedAt: string) {
-    super(createdAt, updatedAt)
-    this.id = id
-    this.domain = domain
-    this.favicon = favicon
+  constructor (analyticsProject: AnalyticsProjectModel) {
+    super(analyticsProject.createdAt, analyticsProject.updatedAt)
+    this.id = analyticsProject.id
+    this.domain = analyticsProject.domain
+    this.favicon = analyticsProject.favicon
+    this.active = analyticsProject.active || this.active
   }
 }

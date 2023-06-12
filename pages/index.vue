@@ -17,6 +17,7 @@ to="/analytics/new"
         :key="project.id"
         :domain="project.domain"
         :favicon="project.favicon"
+        :active="project.active"
       />
     </div>
   </div>

@@ -11,7 +11,7 @@
               {{ props.domain }}
             </h3>
           </div>
-          <PulsatingCircle/>
+          <PulsatingCircle :color="props.active ? '#10B981' : '#FE4752'"/>
         </div>
         <div class="pl-8 mt-2 flex items-center justify-between">
               <span class="text-gray-600 dark:text-gray-400 text-sm truncate">
@@ -37,6 +37,11 @@ const props = defineProps({
   favicon: {
     type: String as () => string | null,
     default: '/images/placeholder_favicon.ico',
+    required: false
+  },
+  active: {
+    type: Boolean,
+    default: false,
     required: false
   }
 })

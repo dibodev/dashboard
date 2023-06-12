@@ -1,8 +1,15 @@
 <template>
-  <span class="pulsating-circle"/>
+  <span :style="`--pulsating-circle-color: ${props.color}`" class="pulsating-circle"/>
 </template>
 
 <script lang="ts" setup>
+const props = defineProps({
+  color: {
+    type: String,
+    required: false,
+    default: '#10B981'
+  }
+})
 </script>
 
 <style lang="scss" scoped>
@@ -14,8 +21,8 @@ $size: 10px;
   position: relative;
 
   &::before {
-    animation: pulse-ring 3s cubic-bezier(.215, .61, .355, 1) infinite;
-    background-color: rgb(16, 185, 129, 1);
+    animation: pulse-ring 2s cubic-bezier(.215, .61, .355, 1) infinite;
+    background-color: var(--pulsating-circle-color);
     border-radius: 45px;
     box-sizing: border-box;
     content: "";
@@ -28,8 +35,8 @@ $size: 10px;
   }
 
   &::after {
-    animation: pulse-dot 3s cubic-bezier(.455,.03,.515,.955) -.4s infinite;
-    background-color: rgba(16, 185, 129, 1);
+    animation: pulse-dot 2s cubic-bezier(.455,.03,.515,.955) -.4s infinite;
+    background-color: var(--pulsating-circle-color);
     border-radius: 15px;
     content: "";
     display: block;
