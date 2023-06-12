@@ -163,7 +163,7 @@
           </div>
         </aside>
 
-        <main class="sm:ml-64">
+        <main class="sm:ml-64 p-5">
           <slot />
         </main>
       </Body>

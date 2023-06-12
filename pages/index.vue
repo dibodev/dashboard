@@ -1,14 +1,30 @@
 <template>
-    <div class="p-5 bg-white dark:bg-gray-900 antialiased text-white h-screen">
-        <div class="my-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          <DomainCard/>
-        </div>
+  <div>
+    <div class="flex items-center justify-end">
+      <NuxtLink role="button"
+to="/analytics/new"
+                class="inline-flex items-center justify-center px-5 py-3
+        font-medium text-white bg-indigo-600 border border-transparent leading-6
+        rounded-md hover:bg-indigo-500 focus:outline-none focus:shadow-outline
+        transition duration-150 ease-in-out">
+        Ajouter un domaine
+      </NuxtLink>
     </div>
+
+    <div v-if="projects.length" class="my-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <DomainCard
+        v-for="project in projects"
+        :key="project.id"
+        :domain="project.domain"
+        :favicon="project.favicon"
+      />
+    </div>
+  </div>
 </template>
 <script setup lang="ts">
-import axios from 'axios'
 import { io } from 'socket.io-client'
 import DomainCard from '~/components/cards/DomainCard.vue'
+import { useAnalyticsProjectStore } from '~/stores/analytics-project.store'
 
 // definePageMeta({
 //   nuxtI18n: {
@@ -17,13 +33,8 @@ import DomainCard from '~/components/cards/DomainCard.vue'
 //   }
 // })
 
-type Website = {
-    id: number
-    name: string
-    domain: string
-}
-
-const websites = ref([] as Website[])
+useAnalyticsProjectStore().fetchProjects()
+const projects = computed(() => useAnalyticsProjectStore().projects)
 
 if (apiUrl) {
   const socket = io(apiUrl)
@@ -34,11 +45,5 @@ if (apiUrl) {
   socket.on('current-visitors', (visitors: number) => {
     console.log(visitors)
   })
-
-  const getWebsites = async () => {
-    const res = await axios.get(`${apiUrl}/projects`)
-    websites.value = res.data
-  }
-  getWebsites()
 }
 </script>

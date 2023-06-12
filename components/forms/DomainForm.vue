@@ -1,27 +1,35 @@
 <template>
-    <form>
-        <div class="mb-6">
-            <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
-            <input id="name"
-                   type="text"
-                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                   placeholder="Mon site"
-                   required>
-        </div>
-
-        <div class="mb-6">
+    <Form @submit="submit">
+<div class="mb-6">
             <label for="domain" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Domaine</label>
-            <input
-                    id="domain"
-                    type="text"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="monsite.fr"
-                    required>
+            <Field class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                   name="domain"
+                   rules="required"
+required />
+            <ErrorMessage name="domain" />
         </div>
         <button
                 type="submit"
-                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-            Submit
+                class="inline-flex items-center justify-center px-5 py-3
+        font-medium text-white bg-indigo-600 border border-transparent leading-6
+        rounded-md hover:bg-indigo-500 focus:outline-none focus:shadow-outline
+        transition duration-150 ease-in-out">
+            Créer
         </button>
-    </form>
+    </Form>
 </template>
+<script lang="ts" setup>
+import { Form, Field, ErrorMessage } from 'vee-validate'
+import { useAnalyticsProjectStore } from '~/stores/analytics-project.store.js'
+
+/* HOOKS */
+const router = useRouter()
+
+/* METHOD */
+const submit = async (body: {domain: string}) => {
+  const project = await useAnalyticsProjectStore().createProject(body)
+  if (project) {
+    await router.push('/')
+  }
+}
+</script>
