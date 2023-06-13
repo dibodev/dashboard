@@ -1,6 +1,6 @@
 <template>
   <div class="relative">
-    <NuxtLink :to="`/stats/${props.domain}`">
+    <NuxtLink :to="`/analytics/${props.domain}`">
       <div class="col-span-1 bg-white dark:bg-gray-800 rounded-lg shadow p-4 group-hover:shadow-lg cursor-pointer">
         <div class="w-full flex items-center justify-between space-x-4">
           <img :src="favicon"
@@ -16,7 +16,7 @@
         <div class="pl-8 mt-2 flex items-center justify-between">
               <span class="text-gray-600 dark:text-gray-400 text-sm truncate">
                 <span class="text-gray-800 dark:text-gray-200">
-                  <span class="text-medium">1</span> visitor in last 24h
+                  <span class="text-medium">{{ visitorLast24Hours }}</span> visiteur dans les dernières 24h
                 </span>
               </span>
         </div>
@@ -42,6 +42,11 @@ const props = defineProps({
   active: {
     type: Boolean,
     default: false,
+    required: false
+  },
+  visitorLast24Hours: {
+    type: Number,
+    default: 0,
     required: false
   }
 })

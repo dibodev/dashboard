@@ -11,13 +11,14 @@ to="/analytics/new"
       </NuxtLink>
     </div>
 
-    <div v-if="projects.length" class="my-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    <div v-if="projectsWithVisitorCount.length" class="my-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
       <DomainCard
-        v-for="project in projects"
-        :key="project.id"
-        :domain="project.domain"
-        :favicon="project.favicon"
-        :active="project.active"
+        v-for="project in projectsWithVisitorCount"
+        :key="project.project.id"
+        :domain="project.project.domain"
+        :favicon="project.project.favicon"
+        :active="project.project.active"
+        :visitor-last24-hours="project.visitorLast24Hours"
       />
     </div>
   </div>
@@ -35,7 +36,7 @@ import { useAnalyticsProjectStore } from '~/stores/analytics-project.store'
 // })
 
 useAnalyticsProjectStore().fetchProjects()
-const projects = computed(() => useAnalyticsProjectStore().projects)
+const projectsWithVisitorCount = computed(() => useAnalyticsProjectStore().projectsWithVisitorCount)
 
 if (apiUrl) {
   const socket = io(apiUrl)

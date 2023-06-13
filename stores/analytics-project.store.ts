@@ -1,11 +1,15 @@
 import { defineStore } from 'pinia'
-import AnalyticsProjectModel, { AnalyticsProjectCommand } from '~/services/models/AnalyticsProjectModel'
+import AnalyticsProjectModel, {
+  AnalyticsProjectCommand,
+  AnalyticsProjectWithVisitorCount
+} from '~/services/models/AnalyticsProjectModel'
 import { useAppStore } from '~/stores/app.store'
 import AnalyticsProjectService from '~/services/AnalyticsProjectService'
 
 export const useAnalyticsProjectStore = defineStore('analyticsProjectStore', {
   state: () => ({
     _projects: [] as AnalyticsProjectModel[],
+    _projectsWithVisitorCount: [] as AnalyticsProjectWithVisitorCount[],
     _project: {} as AnalyticsProjectModel
   }),
   actions: {
@@ -17,12 +21,17 @@ export const useAnalyticsProjectStore = defineStore('analyticsProjectStore', {
       this._project = project
     },
 
-    async fetchProjects (): Promise<AnalyticsProjectModel[]> {
+    setProjectsWithVisitorCount (projects: AnalyticsProjectWithVisitorCount[]) {
+      this._projectsWithVisitorCount = projects
+    },
+
+    async fetchProjects (): Promise<AnalyticsProjectWithVisitorCount[]> {
       useAppStore().setPending(true)
-      const projects = await AnalyticsProjectService.getAll()
-      this.setProjects(projects)
+      const res = await AnalyticsProjectService.getAll()
+      this.setProjects(res.map(p => p.project))
+      this.setProjectsWithVisitorCount(res)
       useAppStore().setPending(false)
-      return projects
+      return res
     },
 
     async updateProject (project: AnalyticsProjectCommand, id: number): Promise<AnalyticsProjectModel | null> {
@@ -55,6 +64,7 @@ export const useAnalyticsProjectStore = defineStore('analyticsProjectStore', {
   },
   getters: {
     project: (state): AnalyticsProjectModel => state._project,
-    projects: (state): AnalyticsProjectModel[] => state._projects
+    projects: (state): AnalyticsProjectModel[] => state._projects,
+    projectsWithVisitorCount: (state): AnalyticsProjectWithVisitorCount[] => state._projectsWithVisitorCount
   }
 })

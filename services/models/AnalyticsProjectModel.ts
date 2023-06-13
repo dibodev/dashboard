@@ -17,3 +17,5 @@ export default class AnalyticsProjectModel extends BaseModel {
     this.active = analyticsProject.active || this.active
   }
 }
+
+export type AnalyticsProjectWithVisitorCount = { project: AnalyticsProjectModel, visitorLast24Hours: number }
