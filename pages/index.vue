@@ -24,7 +24,6 @@ to="/analytics/new"
   </div>
 </template>
 <script setup lang="ts">
-import { io } from 'socket.io-client'
 import DomainCard from '~/components/cards/DomainCard.vue'
 import { useAnalyticsProjectStore } from '~/stores/analytics-project.store'
 
@@ -37,15 +36,4 @@ import { useAnalyticsProjectStore } from '~/stores/analytics-project.store'
 
 useAnalyticsProjectStore().fetchProjects()
 const projectsWithVisitorCount = computed(() => useAnalyticsProjectStore().projectsWithVisitorCount)
-
-if (apiUrl) {
-  const socket = io(apiUrl)
-
-  socket.on('news', (news: { hello: string }) => {
-    console.log(news)
-  })
-  socket.on('current-visitors', (visitors: number) => {
-    console.log(visitors)
-  })
-}
 </script>

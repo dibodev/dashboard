@@ -1,4 +1,4 @@
-import BaseModel from '~/services/models/BaseModel'
+import BaseModel from '~/models/BaseModel'
 
 export type AnalyticsProjectCommand = {
   domain: string;

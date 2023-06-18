@@ -7,7 +7,7 @@ export default defineNuxtConfig({
       script: [
         {
           src: `${apiUrl}/analytics.js`,
-          'data-project-id': 1
+          'data-domain': 'dibodev.com'
         }
       ]
 

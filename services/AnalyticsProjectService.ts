@@ -1,6 +1,6 @@
 import BaseApiService from '~/services/BaseApiService'
-import type { AnalyticsProjectCommand } from '~/services/models/AnalyticsProjectModel'
-import AnalyticsProjectModel, { AnalyticsProjectWithVisitorCount } from '~/services/models/AnalyticsProjectModel'
+import type { AnalyticsProjectCommand } from '~/models/AnalyticsProjectModel'
+import AnalyticsProjectModel, { AnalyticsProjectWithVisitorCount } from '~/models/AnalyticsProjectModel'
 
 export default class AnalyticsProjectService extends BaseApiService {
   static async getAll (): Promise<AnalyticsProjectWithVisitorCount[]> {

@@ -2,7 +2,7 @@ import { defineStore } from 'pinia'
 import AnalyticsProjectModel, {
   AnalyticsProjectCommand,
   AnalyticsProjectWithVisitorCount
-} from '~/services/models/AnalyticsProjectModel'
+} from '~/models/AnalyticsProjectModel'
 import { useAppStore } from '~/stores/app.store'
 import AnalyticsProjectService from '~/services/AnalyticsProjectService'
 
@@ -23,6 +23,9 @@ export const useAnalyticsProjectStore = defineStore('analyticsProjectStore', {
 
     setProjectsWithVisitorCount (projects: AnalyticsProjectWithVisitorCount[]) {
       this._projectsWithVisitorCount = projects
+    },
+    getProjectByDomain (domain: string): AnalyticsProjectModel | undefined {
+      return this._projects.find(p => p.domain === domain)
     },
 
     async fetchProjects (): Promise<AnalyticsProjectWithVisitorCount[]> {
