@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Mac",
+    "percentage": 45,
+    "visitors": 57202
+  },
+  {
+    "name": "Windows",
+    "percentage": 26,
+    "visitors": 33275
+  },
+  {
+    "name": "iOS",
+    "percentage": 14,
+    "visitors": 18325
+  },
+  {
+    "name": "Android",
+    "percentage": 8,
+    "visitors": 10179
+  },
+  {
+    "name": "GNU/Linux",
+    "percentage": 5,
+    "visitors": 6458
+  },
+  {
+    "name": "Ubuntu",
+    "percentage": 1,
+    "visitors": 1536
+  },
+  {
+    "name": "iPadOS",
+    "percentage": 0,
+    "visitors": 455
+  },
+  {
+    "name": "Chrome OS",
+    "percentage": 0,
+    "visitors": 332
+  },
+  {
+    "name": "OpenBSD",
+    "percentage": 0,
+    "visitors": 9
+  }
+]

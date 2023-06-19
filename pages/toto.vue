@@ -129,9 +129,8 @@
                 </div>
             </div>
         </div>
-        <img src="/chien.jpg" alt="photo de chien">
     </div>
 </template>
 <script setup>
-import LineChart from '~/components/charts/LineChart.vue'
+import LineChart from '~/components/charts/LineChartOld.vue'
 </script>

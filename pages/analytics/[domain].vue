@@ -1,22 +1,26 @@
 <template>
-    <h1>{{ domain }}</h1>
-    <SelectPeriod/>
-    <div class="block ml-1 md:ml-2 mr-auto text-xs md:text-sm font-bold text-gray-500 dark:text-gray-300">
-        <PulsatingCircle/>
-        {{ currentVisitors }} <span class="inline-block">current visitors</span>
-        <div class="relative w-full mt-2 rounded shadow-xl bg-gray-700">
-            <TopStats/>
-            <LineChart/>
-        </div>
-</div>
+  <h1>{{ domain }}</h1>
+  <SelectPeriod/>
+  <div class="block ml-1 md:ml-2 mr-auto text-xs md:text-sm font-bold text-gray-500 dark:text-gray-300">
+    <PulsatingCircle/>
+    {{ currentVisitors }} <span class="inline-block">current visitors</span>
+    <div class="relative w-full mt-2 rounded shadow-xl bg-gray-700">
+      <TopStats/>
+      <VisitorsLineChart/>
+    </div>
+    <div class="items-start justify-between block w-full md:flex gap-3">
+      <DevicesCard/>
+    </div>
+  </div>
 </template>
 
 <script lang="ts" setup>
 import { io } from 'socket.io-client'
 import PulsatingCircle from '~/components/ui/PulsatingCircle.vue'
 import TopStats from '~/components/analytics/TopStats.vue'
-import LineChart from '~/components/charts/LineChart.vue'
 import SelectPeriod from '~/components/fields/SelectPeriod.vue'
+import VisitorsLineChart from '~/components/charts/VisitorsLineChart.vue'
+import DevicesCard from '~/components/analytics/cards/DevicesCard.vue'
 
 const route = useRoute()
 const domain = computed(() => route.params.domain)

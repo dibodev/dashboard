@@ -1,8 +1,9 @@
 import { defineStore } from 'pinia'
 import { useAppStore } from '~/stores/app.store'
 import AnalyticsModel from '~/models/AnalyticsModel'
-import type { topStats } from '~/models/AnalyticsModel'
+import type { TopStats } from '~/models/AnalyticsModel'
 import AnalyticsService from '~/services/AnalyticsService'
+import { useAnalyticsFiltersStore } from '~/stores/analytics-filters.store'
 
 export const useAnalyticsStore = defineStore('analyticsStore', {
   state: () => ({
@@ -14,7 +15,8 @@ export const useAnalyticsStore = defineStore('analyticsStore', {
     },
     async fetchAnalytics (domain: string): Promise<AnalyticsModel> {
       useAppStore().setPending(true)
-      const res = await AnalyticsService.getAll(domain)
+      const period = useAnalyticsFiltersStore().activePeriodFilter.value
+      const res = await AnalyticsService.getAll(domain, period)
       this.setAnalytics(res)
       useAppStore().setPending(false)
       return res
@@ -22,6 +24,6 @@ export const useAnalyticsStore = defineStore('analyticsStore', {
   },
   getters: {
     analytics: (state): AnalyticsModel => state._analytics,
-    topStats: (state): topStats[] => state._analytics.topStats
+    topStats: (state): TopStats[] => state._analytics.topStats
   }
 })

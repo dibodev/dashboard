@@ -2,10 +2,13 @@
     <Form @submit="submit">
 <div class="mb-6">
             <label for="domain" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Domaine</label>
-            <Field class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                   name="domain"
-                   rules="required"
-required />
+            <Field
+              v-model="values.domain"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              name="domain"
+              rules="required"
+              required
+            />
             <ErrorMessage name="domain" />
         </div>
         <button
@@ -25,9 +28,13 @@ import { useAnalyticsProjectStore } from '~/stores/analytics-project.store.js'
 /* HOOKS */
 const router = useRouter()
 
+const values = ref({
+  domain: ''
+})
+
 /* METHOD */
-const submit = async (body: {domain: string}) => {
-  const project = await useAnalyticsProjectStore().createProject(body)
+const submit = async () => {
+  const project = await useAnalyticsProjectStore().createProject(values.value)
   if (project) {
     await router.push('/')
   }

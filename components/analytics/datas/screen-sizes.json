@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Desktop",
+    "percentage": 77,
+    "visitors": 98911
+  },
+  {
+    "name": "Mobile",
+    "percentage": 22,
+    "visitors": 28209
+  },
+  {
+    "name": "Tablet",
+    "percentage": 1,
+    "visitors": 759
+  },
+  {
+    "name": "(not set)",
+    "percentage": 0,
+    "visitors": 42
+  }
+]

@@ -1,55 +1,47 @@
 <template>
-    <div>
-        <canvas id="line-chart"/>
-    </div>
+  <div>
+    <canvas ref="canvas"/>
+  </div>
 </template>
 
-<script setup>
-import { ref, onMounted } from 'vue'
-import { Chart, LineController, CategoryScale, PointElement, LineElement, LinearScale } from 'chart.js'
+<script lang="ts" setup>
+import { ref, onMounted, onUnmounted } from 'vue'
+import { Chart, registerables } from 'chart.js'
 
-Chart.register(LineController, CategoryScale, PointElement, LineElement, LinearScale)
+Chart.register(...registerables) // Register the controllers, elements, scales and plugins for use in Chart.js
 
-const chart = ref(null)
+const canvas = ref(null)
+let chart = null
 
 onMounted(() => {
-  const ctx = document.getElementById('line-chart').getContext('2d')
-
-  const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July']
-  const data = {
-    labels,
-    datasets: [
-      {
-        label: 'Dataset 1',
-        data: [65, 59, 80, 81, 56, 55, 40],
-        borderColor: '#f87979',
-        backgroundColor: '#f87979'
-      },
-      {
-        label: 'Dataset 2',
-        data: [28, 48, 40, 19, 86, 27, 90],
-        borderColor: '#7CFC00',
-        backgroundColor: '#7CFC00'
-      }
-    ]
-  }
-  const config = {
+  chart = new Chart(canvas.value, {
     type: 'line',
-    data,
+    data: {
+      labels: ['Jan', 'Fev', 'Mar', 'Avr', 'Mai', 'Jun', 'Jul', 'Aou', 'Sep', 'Oct', 'Nov', 'Dec'],
+      datasets: [
+        {
+          label: 'Data One',
+          backgroundColor: '#FC2525',
+          data: [40, 39, 10, 50, 30, 70, 20, 60, 80, 40, 32, 40]
+        }
+      ]
+    },
     options: {
       responsive: true,
-      plugins: {
-        legend: {
-          position: 'top'
-        },
-        title: {
-          display: true,
-          text: 'Chart.js Line Chart'
+      maintainAspectRatio: false,
+      scales: {
+        y: {
+          beginAtZero: true
         }
       }
     }
-  }
+  })
+})
 
-  chart.value = new Chart(ctx, config)
+onUnmounted(() => {
+  if (chart) {
+    chart.destroy()
+    chart = null
+  }
 })
 </script>
