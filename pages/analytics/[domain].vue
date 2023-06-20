@@ -6,7 +6,6 @@
     {{ currentVisitors }} <span class="inline-block">current visitors</span>
     <div class="relative w-full mt-2 rounded shadow-xl bg-gray-700">
       <TopStats/>
-      <VisitorsLineChart/>
     </div>
     <div class="items-start justify-between block w-full md:flex gap-3">
       <DevicesCard/>
@@ -19,7 +18,6 @@ import { io } from 'socket.io-client'
 import PulsatingCircle from '~/components/ui/PulsatingCircle.vue'
 import TopStats from '~/components/analytics/TopStats.vue'
 import SelectPeriod from '~/components/fields/SelectPeriod.vue'
-import VisitorsLineChart from '~/components/charts/VisitorsLineChart.vue'
 import DevicesCard from '~/components/analytics/cards/DevicesCard.vue'
 
 const route = useRoute()

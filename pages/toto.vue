@@ -1,6 +1,6 @@
 <template>
-   <PlausibleChart/>
+   <VisitorsLineChart/>
 </template>
 <script setup>
-import PlausibleChart from '~/components/charts/PlausibleChart.vue'
+import VisitorsLineChart from '~/components/charts/VisitorsLineChart/VisitorsLineChart.vue'
 </script>
