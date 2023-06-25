@@ -6,17 +6,15 @@
         </Head>
         <Body class="bg-gray-50 dark:bg-slate-900">
         <!-- Sidebar Toggle -->
-        <Navbar />
-        <SideBar />
+        <Navbar @update:open="openSidebar = !openSidebar"/>
+        <SideBar
+            v-model:open="openSidebar"
+            @update:open="openSidebar = $event"
+        />
         <!-- Content -->
-        <div class="w-full pt-10 px-4 sm:px-6 md:px-8 lg:pl-72">
-            <!-- Page Heading -->
-            <header>
-                <p class="mb-2 text-sm font-semibold text-blue-600">
-                    Starter Pages & Examples
-                </p>
-            </header>
-        </div>
+        <main class="w-full pt-10 px-4 sm:px-6 md:px-8 lg:pl-72">
+            <slot />
+        </main>
         <!--        <main class="sm:ml-64 p-5">-->
         <!--          <slot />-->
         <!--        </main>-->
@@ -34,4 +32,6 @@ const app = useAppConfig()
 /* COMPUTED */
 const title = computed(() => 'Accueil')
 
+/* REFS */
+const openSidebar = ref(false)
 </script>

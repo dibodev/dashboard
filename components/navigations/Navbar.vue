@@ -4,13 +4,18 @@
             <!-- Navigation Toggle -->
             <button
                     type="button"
-                    class="text-gray-600 hover:text-gray-900">
+                    class="text-gray-600 hover:text-gray-900"
+                    @click="emit('update:open')">
                 <span class="sr-only">Toggle Navigation</span>
                 <nuxt-icon name="menu" filled class="menu-icon" size="32px" />
             </button>
         </div>
     </div>
 </template>
+
+<script lang="ts" setup>
+const emit = defineEmits(['update:open'])
+</script>
 
 <style>
 .menu-icon svg {
