@@ -1,0 +1,56 @@
+[
+  {
+    "code": "GB-ENG",
+    "flag": "🇬🇧",
+    "name": "England",
+    "visitors": 9726
+  },
+  {
+    "code": "US-CA",
+    "flag": "🇺🇸",
+    "name": "California",
+    "visitors": 4345
+  },
+  {
+    "code": "FR-IDF",
+    "flag": "🇫🇷",
+    "name": "Île-de-France",
+    "visitors": 3307
+  },
+  {
+    "code": "DE-BE",
+    "flag": "🇩🇪",
+    "name": "Berlin",
+    "visitors": 2756
+  },
+  {
+    "code": "DE-NW",
+    "flag": "🇩🇪",
+    "name": "North Rhine-Westphalia",
+    "visitors": 2749
+  },
+  {
+    "code": "US-NY",
+    "flag": "🇺🇸",
+    "name": "New York",
+    "visitors": 2511
+  },
+  {
+    "code": "DE-BY",
+    "flag": "🇩🇪",
+    "name": "Bavaria",
+    "visitors": 2127
+  },
+  {
+    "code": "DE-HE",
+    "flag": "🇩🇪",
+    "name": "Hesse",
+    "visitors": 2014
+  },
+  {
+    "code": "NL-NH",
+    "flag": "🇳🇱",
+    "name": "North Holland",
+    "visitors": 1869
+  }
+]

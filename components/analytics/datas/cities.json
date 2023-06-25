@@ -1,0 +1,56 @@
+[
+  {
+    "code": 2950159,
+    "flag": "🇩🇪",
+    "name": "Berlin",
+    "visitors": 2754
+  },
+  {
+    "code": 2988507,
+    "flag": "🇫🇷",
+    "name": "Paris",
+    "visitors": 2008
+  },
+  {
+    "code": 2761369,
+    "flag": "🇦🇹",
+    "name": "Vienna",
+    "visitors": 1708
+  },
+  {
+    "code": 2643743,
+    "flag": "🇬🇧",
+    "name": "London",
+    "visitors": 1614
+  },
+  {
+    "code": 2759794,
+    "flag": "🇳🇱",
+    "name": "Amsterdam",
+    "visitors": 1484
+  },
+  {
+    "code": 3143244,
+    "flag": "🇳🇴",
+    "name": "Oslo",
+    "visitors": 1316
+  },
+  {
+    "code": 2925533,
+    "flag": "🇩🇪",
+    "name": "Frankfurt am Main",
+    "visitors": 1142
+  },
+  {
+    "code": 5128581,
+    "flag": "🇺🇸",
+    "name": "New York City",
+    "visitors": 1091
+  },
+  {
+    "code": 658225,
+    "flag": "🇫🇮",
+    "name": "Helsinki",
+    "visitors": 981
+  }
+]

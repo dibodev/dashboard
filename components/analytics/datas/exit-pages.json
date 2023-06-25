@@ -1,0 +1,56 @@
+[
+  {
+    "exit_rate": 51.0,
+    "name": "/sites",
+    "total_exits": 122236,
+    "unique_exits": 69252
+  },
+  {
+    "exit_rate": 44.0,
+    "name": "/",
+    "total_exits": 29913,
+    "unique_exits": 27488
+  },
+  {
+    "exit_rate": 5.0,
+    "name": "/plausible.io",
+    "total_exits": 5251,
+    "unique_exits": 4577
+  },
+  {
+    "exit_rate": 22.0,
+    "name": "/settings",
+    "total_exits": 3212,
+    "unique_exits": 3018
+  },
+  {
+    "exit_rate": 11.0,
+    "name": "/login",
+    "total_exits": 2663,
+    "unique_exits": 2509
+  },
+  {
+    "exit_rate": 43.0,
+    "name": "/docs/self-hosting",
+    "total_exits": 2573,
+    "unique_exits": 2316
+  },
+  {
+    "exit_rate": 24.0,
+    "name": "/sites/new",
+    "total_exits": 1363,
+    "unique_exits": 1308
+  },
+  {
+    "exit_rate": 14.0,
+    "name": "/docs",
+    "total_exits": 1315,
+    "unique_exits": 1252
+  },
+  {
+    "exit_rate": 19.0,
+    "name": "/register",
+    "total_exits": 1264,
+    "unique_exits": 1231
+  }
+]

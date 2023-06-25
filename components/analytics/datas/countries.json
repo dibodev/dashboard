@@ -1,0 +1,74 @@
+[
+  {
+    "alpha_3": "USA",
+    "code": "US",
+    "flag": "🇺🇸",
+    "name": "United States",
+    "percentage": 30,
+    "visitors": 23865
+  },
+  {
+    "alpha_3": "DEU",
+    "code": "DE",
+    "flag": "🇩🇪",
+    "name": "Germany",
+    "percentage": 20,
+    "visitors": 15680
+  },
+  {
+    "alpha_3": "GBR",
+    "code": "GB",
+    "flag": "🇬🇧",
+    "name": "United Kingdom",
+    "percentage": 14,
+    "visitors": 11158
+  },
+  {
+    "alpha_3": "FRA",
+    "code": "FR",
+    "flag": "🇫🇷",
+    "name": "France",
+    "percentage": 10,
+    "visitors": 8257
+  },
+  {
+    "alpha_3": "NLD",
+    "code": "NL",
+    "flag": "🇳🇱",
+    "name": "Netherlands",
+    "percentage": 7,
+    "visitors": 5205
+  },
+  {
+    "alpha_3": "IND",
+    "code": "IN",
+    "flag": "🇮🇳",
+    "name": "India",
+    "percentage": 5,
+    "visitors": 4325
+  },
+  {
+    "alpha_3": "ESP",
+    "code": "ES",
+    "flag": "🇪🇸",
+    "name": "Spain",
+    "percentage": 5,
+    "visitors": 3692
+  },
+  {
+    "alpha_3": "CAN",
+    "code": "CA",
+    "flag": "🇨🇦",
+    "name": "Canada",
+    "percentage": 5,
+    "visitors": 3628
+  },
+  {
+    "alpha_3": "DNK",
+    "code": "DK",
+    "flag": "🇩🇰",
+    "name": "Denmark",
+    "percentage": 4,
+    "visitors": 3127
+  }
+]

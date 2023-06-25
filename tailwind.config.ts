@@ -19,9 +19,25 @@ module.exports = {
       xl: '1280px',
       '2xl': '1536px'
     },
+    container: {
+      center: true,
+      padding: '1rem',
+      screens: {
+        sm: '640px',
+        md: '768px',
+        lg: '1024px',
+        xl: '70rem',
+        '2xl': '70rem'
+      }
+    },
     extend: {
       colors: {
-        primary: '#f00'
+        primary: '#f00',
+        gray: {
+          500: 'rgba(107, 114, 128, 0.15)',
+          700: '#252f3f',
+          900: '#1a202c'
+        }
       },
       spacing: {
       }

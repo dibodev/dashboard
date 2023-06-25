@@ -1,6 +1,5 @@
 <template>
-   <VisitorsLineChart/>
+   <h1>OK</h1>
 </template>
-<script setup>
-import VisitorsLineChart from '~/components/charts/VisitorsLineChart/VisitorsLineChart.vue'
+<script lang="ts" setup>
 </script>

@@ -8,7 +8,10 @@ export default defineNuxtConfig({
         {
           src: `${apiUrl}/analytics.js`,
           'data-domain': 'dibodev.com'
-        }
+        },
+        { src: 'https://d3js.org/d3.v3.min.js' },
+        { src: 'https://d3js.org/topojson.v1.min.js' },
+        { src: 'https://datamaps.github.io/scripts/datamaps.all.min.js' }
       ]
 
     }

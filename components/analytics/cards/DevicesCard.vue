@@ -1,6 +1,8 @@
 <template>
   <StatsCard
-    :steps="steps">
+    :active-step-name="activeStep"
+    :steps="steps"
+    @change-step="activeStep = $event">
     <template #browser>
       <StatsListElement
         v-for="browser in devices[0].data"
@@ -8,6 +10,7 @@
         :title="browser.name"
         :value="browser.visitors"
         :percentage="browser.percentage"
+        :greatest-nb-of-visitors="browserGreatestNbOfVisitors"
       />
     </template>
     <template #os>
@@ -17,6 +20,7 @@
         :title="os.name"
         :value="os.visitors"
         :percentage="os.percentage"
+        :greatest-nb-of-visitors="osGreatestNbOfVisitors"
       />
     </template>
     <template #size>
@@ -26,44 +30,73 @@
         :title="screenSize.name"
         :value="screenSize.visitors"
         :percentage="screenSize.percentage"
+        :greatest-nb-of-visitors="screenSizeGreatestNbOfVisitors"
       />
     </template>
   </StatsCard>
 </template>
-<script setup>
+<script lang="ts" setup>
 import browsersJson from '../datas/browsers.json'
 import osJson from '../datas/operating-systems.json'
 import screenSizesJson from '../datas/screen-sizes.json'
 import StatsCard from '~/components/analytics/StatsCard.vue'
 import StatsListElement from '~/components/analytics/ui/StatsListElement.vue'
-const devices = [
+
+interface JSONData {
+  name: string
+  visitors: number
+  percentage: number
+}
+
+const devices: {data: JSONData[]}[] = [
   {
-    name: 'Browser',
     data: browsersJson
   },
   {
-    name: 'OS',
     data: osJson
   },
   {
-    name: 'Size',
     data: screenSizesJson
   }
 ]
 
 const steps = [
   {
-    name: 'browser',
+    title: 'Devices',
+    tabName: 'Browser',
+    labelItems: 'Browser',
+    labelValues: 'Visitors',
     slotName: 'browser'
   },
   {
-    name: 'os',
+    title: 'Devices',
+    tabName: 'OS',
+    labelItems: 'Operating system',
+    labelValues: 'Visitors',
     slotName: 'os'
   },
   {
-    name: 'size',
+    title: 'Devices',
+    tabName: 'Size',
+    labelItems: 'Screen size',
+    labelValues: 'Visitors',
     slotName: 'size'
   }
 ]
+/* REFS */
+const activeStep = ref(steps[0].tabName)
 
+/* COMPUTED */
+// TODO: mettre greatestNbOfVisitors dans le json
+const browserGreatestNbOfVisitors = computed(() => {
+  return Math.max(...devices[0].data.map(browser => browser.visitors))
+})
+
+const osGreatestNbOfVisitors = computed(() => {
+  return Math.max(...devices[1].data.map(os => os.visitors))
+})
+
+const screenSizeGreatestNbOfVisitors = computed(() => {
+  return Math.max(...devices[2].data.map(screenSize => screenSize.visitors))
+})
 </script>

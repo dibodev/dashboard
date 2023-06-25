@@ -1,0 +1,56 @@
+[
+  {
+    "name": "/sites",
+    "total_entrances": 115084,
+    "unique_entrances": 62755,
+    "visit_duration": 225
+  },
+  {
+    "name": "/",
+    "total_entrances": 44121,
+    "unique_entrances": 40452,
+    "visit_duration": 157
+  },
+  {
+    "name": "/login",
+    "total_entrances": 4929,
+    "unique_entrances": 4521,
+    "visit_duration": 153
+  },
+  {
+    "name": "/plausible.io",
+    "total_entrances": 3708,
+    "unique_entrances": 3139,
+    "visit_duration": 188
+  },
+  {
+    "name": "/settings",
+    "total_entrances": 2013,
+    "unique_entrances": 1853,
+    "visit_duration": 236
+  },
+  {
+    "name": "/docs",
+    "total_entrances": 1835,
+    "unique_entrances": 1631,
+    "visit_duration": 417
+  },
+  {
+    "name": "/self-hosted-web-analytics",
+    "total_entrances": 1355,
+    "unique_entrances": 1312,
+    "visit_duration": 252
+  },
+  {
+    "name": "/docs/self-hosting",
+    "total_entrances": 1421,
+    "unique_entrances": 1260,
+    "visit_duration": 265
+  },
+  {
+    "name": "/open-source-website-analytics",
+    "total_entrances": 1120,
+    "unique_entrances": 1069,
+    "visit_duration": 204
+  }
+]

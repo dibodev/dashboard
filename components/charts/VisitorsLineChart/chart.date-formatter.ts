@@ -1,19 +1,16 @@
 import { DateTime } from 'luxon'
 
-type Period = 'realtime' | '12mo' | 'day' | '7d';
-type Interval = 'month' | 'week' | 'date' | 'hour' | 'minute';
-
 interface FormatterOptions {
-  period: Period;
-  interval: Interval;
+  period: string; // 'realtime' | '12mo' | 'day' | '7d'
+  interval: string; // 'month' | 'week' | 'date' | 'hour' | 'minute'
   isBucketPartial: boolean;
   shouldShowYear: boolean;
 }
 
 interface DateFormatterConfig {
-  interval: Interval;
+  interval: string; // 'month' | 'week' | 'date' | 'hour' | 'minute'
   longForm: boolean;
-  period: Period;
+  period: string; // 'realtime' | '12mo' | 'day' | '7d'
   isPeriodFull?: boolean;
   shouldShowYear?: boolean;
 }
@@ -39,7 +36,7 @@ const is12HourClock = function (): boolean {
   return !!browserDateFormat.resolvedOptions().hour12
 }
 
-const intervalFormatters: Record<Interval, {
+const intervalFormatters: Record<string, {
   long: (isoDate: string, options: FormatterOptions) => string;
   short: (isoDate: string, options: FormatterOptions) => string;
 }> = {

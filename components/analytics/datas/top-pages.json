@@ -1,0 +1,38 @@
+[
+  {
+    "name": "/sites",
+    "visitors": 74878
+  },
+  {
+    "name": "/",
+    "visitors": 47793
+  },
+  {
+    "name": "/login",
+    "visitors": 17531
+  },
+  {
+    "name": "/plausible.io",
+    "visitors": 7774
+  },
+  {
+    "name": "/settings",
+    "visitors": 7224
+  },
+  {
+    "name": "/docs",
+    "visitors": 6552
+  },
+  {
+    "name": "/register",
+    "visitors": 4986
+  },
+  {
+    "name": "/docs/self-hosting",
+    "visitors": 4116
+  },
+  {
+    "name": "/sites/new",
+    "visitors": 3685
+  }
+]
