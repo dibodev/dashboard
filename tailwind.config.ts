@@ -7,6 +7,7 @@ module.exports = {
     './nuxt.config.{js,ts}',
     './app.vue'
   ],
+  darkMode: 'class',
   theme: {
     fontFamily: {
       sans: 'Rubik, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, "Noto Sans", sans-serif'
