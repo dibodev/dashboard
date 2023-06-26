@@ -75,9 +75,11 @@ PrIssueToMain() {
     pr_title=${pr_title//[^a-zA-Z0-9 ]/}
 
     # Create a pull request from the issue branch to the target branch (main)
-    pr_data=$(gh pr create --base $main_branch --head "$issue_branch_name" -t "$2 $pr_title" -b "" --json url,number --jq '{url: .url, number: .number}')
-    pr_url=$(echo "$pr_data" | jq -r .url)
-    pr_number=$(echo "$pr_data" | jq -r .number)
+    # Create a pull request and get its URL
+    pr_url=$(gh pr create --base $main_branch --head "$issue_branch_name" -t "$2 $pr_title" -b "" | grep -o 'https://github.com[^ ]*')
+
+    # Get PR number
+    pr_number=$(echo "$pr_url" | grep -oP '/pull/\K[0-9]+')
 
     # Add comment to issue
     comment="$date - create pull request branch $issue_branch_name to $main_branch - $github_name. [PR #$pr_number]($pr_url)"
