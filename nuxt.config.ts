@@ -16,6 +16,9 @@ export default defineNuxtConfig({
 
     }
   },
+  css: [
+    '@/assets/css/main.css'
+  ],
   ssr: true,
   typescript: {
     strict: true,
@@ -25,11 +28,17 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
     '@pinia/nuxt',
-    '@nuxtjs/i18n',
+    'nuxt-icons',
     'nuxt-simple-sitemap',
     'nuxt-simple-robots',
+    '@nuxtjs/color-mode',
     '@nuxtjs/google-fonts'
   ],
+  colorMode: {
+    preference: 'system',
+    fallback: 'light',
+    classSuffix: ''
+  },
   sitemap: {
     // xsl: false
   },
@@ -51,39 +60,7 @@ export default defineNuxtConfig({
       siteUrl
     }
   },
-  plugins: [
-  ],
-  i18n: {
-    baseUrl: siteUrl,
-    lazy: true,
-    strategy: 'prefix_except_default',
-    langDir: 'locales',
-    locales: [
-      {
-        code: 'fr',
-        iso: 'fr-FR',
-        file: 'fr.json',
-        isCatchallLocale: true
-      },
-      {
-        code: 'en',
-        iso: 'en-Us',
-        file: 'en.json'
-      },
-      {
-        code: 'es',
-        iso: 'es-ES',
-        file: 'es.json'
-      }
-    ],
-    defaultLocale: 'fr',
-    detectBrowserLanguage: {
-      alwaysRedirect: true,
-      useCookie: true,
-      cookieKey: 'dibodev-lang',
-      redirectOn: 'root'
-    }
-  },
+  plugins: [],
   devtools: {
     enabled: true
   }
