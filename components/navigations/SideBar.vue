@@ -17,14 +17,14 @@
             </NuxtLink>
         </div>
 
-        <nav class="p-6 w-full flex flex-col flex-wrap">
+        <nav class="px-3 py-6 w-full flex flex-col flex-wrap">
             <ul class="space-y-1.5">
                 <li v-for="link in links" :key="link.name">
                     <NuxtLink
                             :to="link.to"
-                            active-class="bg-gray-100 dark:bg-gray-900"
+                            active-class="bg-violet-700 hover:bg-violet-800 dark:bg-violet-400 hover:dark:bg-violet-500"
                             class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm
-                    text-slate-700 rounded-md hover:bg-gray-100 dark:text-white">
+                    text-slate-700 rounded-md hover:bg-gray-100 hover:dark:bg-gray-700 dark:text-white">
                         <nuxt-icon :name="link.icon" class="sidebar-icon" filled/>
                         {{ link.name }}
                     </NuxtLink>
