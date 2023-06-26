@@ -3,5 +3,8 @@
     Ok
   </div>
 </template>
-<script setup>
+<script lang="ts" setup>
+useHead({
+  title: 'Toto'
+})
 </script>

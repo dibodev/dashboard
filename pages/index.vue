@@ -27,12 +27,9 @@ to="/analytics/new"
 import DomainCard from '~/components/cards/DomainCard.vue'
 import { useAnalyticsProjectStore } from '~/stores/analytics-project.store'
 
-// definePageMeta({
-//   nuxtI18n: {
-//     en: true,
-//     fr: true
-//   }
-// })
+useHead({
+  title: 'Analytics'
+})
 
 useAnalyticsProjectStore().fetchProjects()
 const projectsWithVisitorCount = computed(() => useAnalyticsProjectStore().projectsWithVisitorCount)
