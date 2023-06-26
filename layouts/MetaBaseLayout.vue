@@ -33,7 +33,7 @@
       <Meta name="keywords" content="dashboard analytics ga dibodev" />
       <Meta name="author" :content="`L'équipe ${app.name}`" />
     </Head>
-    <Body class="bg-gray-50 dark:bg-slate-900">
+    <Body class="bg-gray-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100">
     <img alt="loaded"
 width="99999"
 height="99999"
