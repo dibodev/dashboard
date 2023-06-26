@@ -44,4 +44,8 @@ socket.on('connect', () => {
     })
 })
 
+useHead({
+    title: 'Analytics ' + domain.value
+})
+
 </script>
