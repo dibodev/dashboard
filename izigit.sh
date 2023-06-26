@@ -46,7 +46,7 @@ PrIssueToMain() {
   if [ "$2" ]; then
     main_branch=main
     # Get branch name with ticket number
-    issue_branch_name=$(git branch -r | grep "$2" | sed 's/origin\///')
+    issue_branch_name=$(git branch -r | grep "$2" | sed 's/origin\///' | sed 's/^ *//')
 
     if [ -z "$issue_branch_name" ]; then
       echo "No git branch found for ticket $2"
