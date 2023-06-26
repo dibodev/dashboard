@@ -1,15 +1,23 @@
 <template>
   <div>
     <div class="flex items-center justify-end">
-      <NuxtLink role="button"
-to="/analytics/new"
-                class="inline-flex items-center justify-center px-5 py-3
-        font-medium text-white bg-indigo-600 border border-transparent leading-6
-        rounded-md hover:bg-indigo-500 focus:outline-none focus:shadow-outline
-        transition duration-150 ease-in-out">
-        Ajouter un domaine
-      </NuxtLink>
-    </div>
+      <div class="flex flex-col gap-3">
+        <DButton to="/analytics/new">
+Ajouter un domaine
+</DButton>
+        <DButton size="sm" to="/analytics/new">
+Ajouter un domaine
+</DButton>
+        <DButton size="lg">
+Ajouter un domaine
+</DButton>
+
+        <DButton disabled>
+disabled
+</DButton>
+        <DButton icon="pie-chart"/>
+      </div>
+</div>
 
     <div v-if="projectsWithVisitorCount.length" class="my-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
       <DomainCard
@@ -26,6 +34,7 @@ to="/analytics/new"
 <script setup lang="ts">
 import DomainCard from '~/components/cards/DomainCard.vue'
 import { useAnalyticsProjectStore } from '~/stores/analytics-project.store'
+import DButton from '~/components/ui/DButton.vue'
 
 useHead({
   title: 'Analytics'
