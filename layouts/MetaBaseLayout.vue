@@ -2,6 +2,7 @@
   <div>
     <Html lang="fr" dir="ltr">
     <Head>
+      <Title/>
       <Meta name="description" :content="appDescription"/>
       <Meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
       <Link ref="icon" href="/favicon.ico"/>
@@ -20,7 +21,7 @@
       <Meta property="og:title" :content="appTitle"/>
       <Meta property="og:description" :content="appDescription"/>
       <Meta property="og:image" content="/images/thumbnail.png"/>
-      <Meta property="og:url" :content="app.siteUrl" />
+      <Meta property="og:url" :content="siteUrl" />
       <Meta property="og:type" content="website"/>
 
       <!-- Twitter Meta Tags -->
