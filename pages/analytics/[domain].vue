@@ -5,7 +5,7 @@
         <div class="block ml-1 md:ml-2 mr-auto text-xs md:text-sm font-bold text-gray-500 dark:text-gray-300">
             <PulsatingCircle/>
             {{ currentVisitors }} <span class="inline-block">current visitors</span>
-            <div class="relative w-full mt-2 rounded shadow-xl bg-gray-700">
+            <div class="relative w-full mt-2 rounded shadow-xl bg-white dark:bg-gray-700">
                 <TopStats/>
                 <VisitorsLineChart/>
             </div>

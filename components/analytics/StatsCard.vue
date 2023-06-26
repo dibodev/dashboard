@@ -1,5 +1,5 @@
 <template>
-    <div class="relative p-4 rounded shadow-xl stats-item flex flex-col mt-6 w-full bg-gray-700">
+    <div class="relative p-4 rounded shadow-xl stats-item flex flex-col mt-6 w-full bg-white dark:bg-gray-700">
         <div class="flex flex-col flex-grow">
             <div class="flex justify-between w-full items-center">
                 <h3 v-if="activeStep" class="font-bold dark:text-gray-100 text-base">
