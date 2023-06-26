@@ -3,7 +3,7 @@
         <div v-if="!mapLoaded" class="flex items-center justify-center h-full">
             <Spinner />
         </div>
-        <div v-show="mapLoaded">
+        <div>
             <div id="map-container"/>
             <div class="flex items-center gap-3">
                 <button
@@ -185,6 +185,7 @@ const drawMap = () => {
 }
 
 onMounted(() => {
+    console.log('mounted')
     drawMap()
     mapLoaded.value = true
     window.addEventListener('resize', resizeMap)

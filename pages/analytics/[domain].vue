@@ -10,12 +10,12 @@
                 <VisitorsLineChart/>
             </div>
             <div class="grid lg:grid-cols-2 gap-3">
+                <LocationsCard/>
                 <DevicesCard/>
-                <SourcesCard/>
             </div>
             <div class="grid lg:grid-cols-2 gap-3">
                 <PagesCard/>
-                <LocationsCard/>
+                <SourcesCard/>
             </div>
         </div>
     </div>
