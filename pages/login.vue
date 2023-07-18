@@ -37,7 +37,7 @@
             Welcome to Squid 🦑
           </h1>
 
-          <p class="mt-4 leading-relaxed text-gray-500 dark:text-gray-400">
+          <p class="mt-4 leading-relaxed text-gray-500 dark:text-gray-500">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi nam
             dolorum aliquam, quibusdam aperiam voluptatum.
           </p>
@@ -140,7 +140,7 @@
             </div>
 
             <div class="col-span-6">
-              <p class="text-sm text-gray-500 dark:text-gray-400">
+              <p class="text-sm text-gray-500 dark:text-gray-500">
                 By creating an account, you agree to our
                 <a href="#" class="text-gray-700 underline dark:text-gray-200">
                   terms and conditions
@@ -158,7 +158,7 @@
                 Create an account
               </button>
 
-              <p class="mt-4 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
+              <p class="mt-4 text-sm text-gray-500 dark:text-gray-500 sm:mt-0">
                 Already have an account?
                 <a
                   href="#"

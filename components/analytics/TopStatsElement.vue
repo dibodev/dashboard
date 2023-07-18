@@ -1,7 +1,7 @@
 <template>
     <div class="relative px-4 md:px-6 w-1/2 my-4 lg:w-auto group select-none cursor-pointer border-r">
         <div>
-            <div class="text-xs font-bold tracking-wide text-gray-500 uppercase dark:text-gray-400 whitespace-nowrap flex w-content border-b group-hover:text-indigo-700 dark:group-hover:text-indigo-500 border-transparent">
+            <div class="text-xs font-bold tracking-wide text-gray-500 uppercase dark:text-gray-500 whitespace-nowrap flex w-content border-b group-hover:text-indigo-700 dark:group-hover:text-indigo-500 border-transparent">
                 {{ props.topStats.name }}
             </div>
             <div class="my-1 space-y-2">

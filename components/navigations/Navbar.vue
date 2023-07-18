@@ -5,7 +5,7 @@
             <!-- Navigation Toggle -->
             <button
                     type="button"
-                    class="text-slate-800 hover:text-slate-600 dark:hover:text-slate-300 dark:text-slate-100"
+                    class="text-slate-800 hover:text-slate-600 dark:hover:text-slate-300 dark:text-gray-100"
                     @click="emit('update:open')">
                 <span class="sr-only">Toggle Navigation</span>
                 <nuxt-icon name="menu" filled class="menu-icon" size="32px" />
