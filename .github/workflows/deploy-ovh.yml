@@ -59,4 +59,4 @@ jobs:
           script: |
             cd /var/www/analytics.dibodev.com/html/.output
             npm install
-            pm2 restart analytics.dibodev.com || PORT=3200 pm2 start server.js --name analytics.dibodev.com
+            pm2 restart analytics.dibodev.com || PORT=3002 pm2 start server.js --name analytics.dibodev.com
