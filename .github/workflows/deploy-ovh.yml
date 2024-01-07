@@ -47,7 +47,7 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           source: ".output/"
-          target: "/var/www/analytics.dibodev.com/html"
+          target: "/var/www/dashboard.dibodev.com/html"
 
       - name: 🚀 Install dependencies and restart Server with PM2
         uses: appleboy/ssh-action@master
@@ -57,6 +57,6 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd /var/www/analytics.dibodev.com/html/.output
+            cd /var/www/dashboard.dibodev.com/html/.output
             npm install
-            pm2 restart analytics.dibodev.com || PORT=3002 pm2 start server.js --name analytics.dibodev.com
+            pm2 restart dashboard.dibodev.com || PORT=3400 pm2 start server.js --name dashboard.dibodev.com
