@@ -1,10 +1,11 @@
-name: 🚀 Build and Deploy Nuxt.js 3 App to o2switch
+name: 🚀 Build and Deploy Nuxt.js 3 App to ovh vps
 on:
   push:
     branches:
       - main
   pull_request:
-    types: [ closed ]
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
@@ -38,13 +39,24 @@ jobs:
       - name: 📝 Create server.js
         run: echo "import('./server/index.mjs');" > .output/server.js
 
-      - name: 📤 Deploy to FTP server
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      - name: 📤 Deploy to VPS
+        uses: appleboy/scp-action@master
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          port: 21
-          protocol: ftp
-          local-dir: ./.output/
-          server-dir: ${{ secrets.FTP_SERVER_DIR }}
+          host: ${{ secrets.SSH_HOST }}
+          port: ${{ secrets.SSH_PORT }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: ".output/"
+          target: "/var/www/dashboard.dibodev.com/html"
+
+      - name: 🚀 Install dependencies and restart Server with PM2
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          port: ${{ secrets.SSH_PORT }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd /var/www/dashboard.dibodev.com/html/.output
+            npm install
+            pm2 restart dashboard.dibodev.com || PORT=3400 pm2 start server.js --name dashboard.dibodev.com
