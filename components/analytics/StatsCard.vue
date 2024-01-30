@@ -1,11 +1,11 @@
 <template>
-    <div class="relative p-4 rounded shadow-xl stats-item flex flex-col mt-6 w-full bg-gray-700">
+    <div class="relative p-4 rounded shadow-xl stats-item flex flex-col mt-6 w-full bg-white dark:bg-gray-700">
         <div class="flex flex-col flex-grow">
             <div class="flex justify-between w-full items-center">
                 <h3 v-if="activeStep" class="font-bold dark:text-gray-100 text-base">
                     {{ activeStep.title }}
                 </h3>
-                <div v-if="activeStepName" class="flex font-medium text-xs items-center text-gray-500 dark:text-gray-400 space-x-2">
+                <div v-if="activeStepName" class="flex font-medium text-xs items-center text-gray-500 dark:text-gray-500 space-x-2">
                     <template v-for="step in props.steps">
                         <button
                             v-if="step.tabName"
@@ -18,7 +18,7 @@
                 </div>
             </div>
             <div v-if="activeStep" class="flex flex-col flex-grow fade-enter-active">
-                <div v-if="activeStep.labelItems && activeStep.labelValues" class="flex items-center justify-between mt-3 mb-2 text-xs font-bold tracking-wide text-gray-500 dark:text-gray-400">
+                <div v-if="activeStep.labelItems && activeStep.labelValues" class="flex items-center justify-between mt-3 mb-2 text-xs font-bold tracking-wide text-gray-500 dark:text-gray-500">
                     <span v-if="activeStep.labelItems">{{ activeStep.labelItems }}</span>
                     <span v-if="activeStep.labelValues" class="text-right">
                   <span class="inline-block w-30">{{ activeStep.labelValues }}</span>

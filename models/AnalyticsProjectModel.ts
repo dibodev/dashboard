@@ -6,14 +6,14 @@ export type AnalyticsProjectCommand = {
 export default class AnalyticsProjectModel extends BaseModel {
   id: number
   domain: string
-  favicon: string | null
+  favicon: string | null = '/images/placeholder_favicon.ico'
   active?: boolean = false
 
   constructor (analyticsProject: AnalyticsProjectModel) {
     super(analyticsProject.createdAt, analyticsProject.updatedAt)
     this.id = analyticsProject.id
     this.domain = analyticsProject.domain
-    this.favicon = analyticsProject.favicon
+    this.favicon = analyticsProject.favicon || this.favicon
     this.active = analyticsProject.active || this.active
   }
 }

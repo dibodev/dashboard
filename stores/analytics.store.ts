@@ -3,7 +3,7 @@ import { useAppStore } from '~/stores/app.store'
 import AnalyticsModel from '~/models/AnalyticsModel'
 import type { TopStats } from '~/models/AnalyticsModel'
 import AnalyticsService from '~/services/AnalyticsService'
-import { useAnalyticsFiltersStore } from '~/stores/analytics-filters.store'
+import { useAnalyticsRouterStore } from '~/stores/analytics.router.store'
 
 export const useAnalyticsStore = defineStore('analyticsStore', {
   state: () => ({
@@ -13,9 +13,10 @@ export const useAnalyticsStore = defineStore('analyticsStore', {
     setAnalytics (analytics: AnalyticsModel): void {
       this._analytics = analytics
     },
-    async fetchAnalytics (domain: string): Promise<AnalyticsModel> {
+    async fetchAnalytics (domain: string | null): Promise<AnalyticsModel> {
+      if (!domain) { return {} as AnalyticsModel }
       useAppStore().setPending(true)
-      const period = useAnalyticsFiltersStore().activePeriodFilter.value
+      const period = useAnalyticsRouterStore().activePeriodFilter.value
       const res = await AnalyticsService.getAll(domain, period)
       this.setAnalytics(res)
       useAppStore().setPending(false)

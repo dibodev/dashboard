@@ -14,7 +14,7 @@
           <PulsatingCircle :color="props.active ? '#10B981' : '#FE4752'"/>
         </div>
         <div class="pl-8 mt-2 flex items-center justify-between">
-              <span class="text-gray-600 dark:text-gray-400 text-sm truncate">
+              <span class="text-gray-600 dark:text-gray-500 text-sm truncate">
                 <span class="text-gray-800 dark:text-gray-200">
                   <span class="text-medium">{{ visitorLast24Hours }}</span> visiteur dans les dernières 24h
                 </span>

@@ -22,7 +22,7 @@
 </template>
 <script setup lang="ts">
 import DomainCard from '~/components/cards/DomainCard.vue'
-import { useAnalyticsProjectStore } from '~/stores/analytics-project.store'
+import { useAnalyticsProjectStore } from '~/stores/analytics.project.store'
 import DButton from '~/components/ui/DButton.vue'
 
 useHead({

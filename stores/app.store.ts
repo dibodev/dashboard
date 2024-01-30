@@ -2,7 +2,7 @@ import { defineStore } from 'pinia'
 
 export const useAppStore = defineStore('appStore', {
   state: () => ({
-    pending: false
+    pending: true
   }),
   actions: {
     setPending (pending: boolean) {
