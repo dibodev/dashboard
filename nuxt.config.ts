@@ -7,7 +7,7 @@ export default defineNuxtConfig({
       script: [
         {
           src: `${apiUrl}/analytics.js`,
-          'data-domain': 'dibodev.com'
+          'data-domain': 'localhost'
         },
         { src: 'https://d3js.org/d3.v3.min.js' },
         { src: 'https://d3js.org/topojson.v1.min.js' },

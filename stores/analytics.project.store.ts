@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia'
-import AnalyticsProjectModel, {
+import AnalyticsProjectModel from '~/models/AnalyticsProjectModel'
+import type {
   AnalyticsProjectCommand,
   AnalyticsProjectWithVisitorCount
 } from '~/models/AnalyticsProjectModel'

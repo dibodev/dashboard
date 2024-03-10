@@ -9,6 +9,8 @@
   ],
   "plugins": [],
   "rules": {
+    "import/no-duplicates": "off",
+    "no-console": "off",
     "multiline-ternary": "off",
     "indent": "off",
     "vue/multi-word-component-names": "off",
