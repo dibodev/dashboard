@@ -21,9 +21,9 @@
     </div>
 </template>
 <script setup lang="ts">
+import { useAnalyticsProjectStore } from '#stores/analytics.project.store'
+import DButton from '#components/ui/DButton.vue'
 import DomainCard from '~/components/cards/DomainCard.vue'
-import { useAnalyticsProjectStore } from '~/stores/analytics.project.store'
-import DButton from '~/components/ui/DButton.vue'
 
 useHead({
     title: 'Analytics'

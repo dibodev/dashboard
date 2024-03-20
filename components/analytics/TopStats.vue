@@ -13,8 +13,8 @@
 </template>
 
 <script lang="ts" setup>
-import TopStatsElement from '~/components/analytics/TopStatsElement.vue'
-import { useAnalyticsStore } from '~/stores/analytics.store'
+import TopStatsElement from '#components/analytics/TopStatsElement.vue'
+import { useAnalyticsStore } from '#stores/analytics.store'
 
 const route = useRoute()
 const domain = computed(() => route.params.domain)

@@ -17,7 +17,7 @@
 <script lang="ts" setup>
 import { ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
-import { useAnalyticsRouterStore } from '~/stores/analytics.router.store'
+import { useAnalyticsRouterStore } from '#stores/analytics.router.store'
 
 const router = useRouter()
 const store = useAnalyticsRouterStore()

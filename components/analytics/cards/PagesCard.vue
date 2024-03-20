@@ -42,8 +42,8 @@
 import topPagesJson from '../datas/top-pages.json'
 import entryPagesJson from '../datas/entry-pages.json'
 import exitPagesJson from '../datas/exit-pages.json'
-import StatsCard from '~/components/analytics/StatsCard.vue'
-import StatsListElement from '~/components/analytics/ui/StatsListElement.vue'
+import StatsCard from '#components/analytics/StatsCard.vue'
+import StatsListElement from '#components/analytics/ui/StatsListElement.vue'
 
 interface JSONData {
     name: string

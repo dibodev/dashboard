@@ -10,10 +10,10 @@ import {
     registerables
 } from 'chart.js'
 import type { ChartConfiguration } from 'chart.js'
-import { buildDataSet, METRIC_FORMATTER } from '~/components/charts/VisitorsLineChart/chart-utils.js'
-import { GraphTooltip } from '~/components/charts/VisitorsLineChart/chart-tooltip.js'
-import graphData from '~/components/analytics/datas/main-graph.json'
-import dateFormatter from '~/components/charts/VisitorsLineChart/chart.date-formatter'
+import { buildDataSet, METRIC_FORMATTER } from '#components/charts/VisitorsLineChart/chart-utils.js'
+import { GraphTooltip } from '#components/charts/VisitorsLineChart/chart-tooltip.js'
+import graphData from '#components/analytics/datas/main-graph.json'
+import dateFormatter from '#components/charts/VisitorsLineChart/chart.date-formatter'
 
 Chart.register(...registerables)
 

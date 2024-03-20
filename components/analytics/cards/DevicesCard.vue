@@ -39,8 +39,8 @@
 import browsersJson from '../datas/browsers.json'
 import osJson from '../datas/operating-systems.json'
 import screenSizesJson from '../datas/screen-sizes.json'
-import StatsCard from '~/components/analytics/StatsCard.vue'
-import StatsListElement from '~/components/analytics/ui/StatsListElement.vue'
+import StatsCard from '#components/analytics/StatsCard.vue'
+import StatsListElement from '#components/analytics/ui/StatsListElement.vue'
 
 interface JSONData {
   name: string

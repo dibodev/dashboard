@@ -1,9 +1,9 @@
 import { defineStore } from 'pinia'
-import { useAppStore } from '~/stores/app.store'
-import AnalyticsModel from '~/models/AnalyticsModel'
-import type { TopStats } from '~/models/AnalyticsModel'
-import AnalyticsService from '~/services/AnalyticsService'
-import { useAnalyticsRouterStore } from '~/stores/analytics.router.store'
+import { useAppStore } from '#stores/app.store'
+import AnalyticsModel from '#models/AnalyticsModel'
+import type { TopStats } from '#models/AnalyticsModel'
+import AnalyticsService from '#services/AnalyticsService'
+import { useAnalyticsRouterStore } from '#stores/analytics.router.store'
 
 export const useAnalyticsStore = defineStore('analyticsStore', {
   state: () => ({

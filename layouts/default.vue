@@ -23,11 +23,11 @@
     </MetaBaseLayout>
 </template>
 <script setup lang="ts">
-import Navbar from '~/components/navigations/Navbar.vue'
-import SideBar from '~/components/navigations/SideBar.vue'
-import MetaBaseLayout from '~/layouts/MetaBaseLayout.vue'
-import { useAppStore } from '~/stores/app.store'
-import Spinner from '~/components/ui/Spinner.vue'
+import Navbar from '#components/navigations/Navbar.vue'
+import SideBar from '#components/navigations/SideBar.vue'
+import MetaBaseLayout from '#layouts/MetaBaseLayout.vue'
+import { useAppStore } from '#stores/app.store'
+import Spinner from '#components/ui/Spinner.vue'
 
 /* REFS */
 const openSidebar = ref(false)

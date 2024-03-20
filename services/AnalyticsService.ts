@@ -1,5 +1,5 @@
-import BaseApiService from '~/services/BaseApiService'
-import AnalyticsModel from '~/models/AnalyticsModel'
+import BaseApiService from '#services/BaseApiService'
+import AnalyticsModel from '#models/AnalyticsModel'
 
 export default class AnalyticsService extends BaseApiService {
   static async getAll (domain: string, period?: string): Promise<AnalyticsModel> {

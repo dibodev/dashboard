@@ -1,6 +1,6 @@
 import type { Chart, TooltipModel } from 'chart.js'
 import { MAIN_COLOR, METRIC_FORMATTER, METRIC_LABELS } from './chart-utils'
-import dateFormatter from '~/components/charts/VisitorsLineChart/chart.date-formatter'
+import dateFormatter from '#components/charts/VisitorsLineChart/chart.date-formatter'
 
 type Tooltip = TooltipModel<'line'>
 

@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts" setup>
-import Switch from '~/components/fields/Switch.vue'
+import Switch from '#components/fields/Switch.vue'
 
 const colorMode = useColorMode()
 /* REFS */

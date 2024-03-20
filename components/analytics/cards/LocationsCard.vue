@@ -48,10 +48,10 @@
 import countriesJson from '../datas/countries.json'
 import regionsJson from '../datas/regions.json'
 import citiesJson from '../datas/cities.json'
-import locationJson from '~/components/analytics/datas/locations.json'
-import StatsCard from '~/components/analytics/StatsCard.vue'
-import StatsListElement from '~/components/analytics/ui/StatsListElement.vue'
-import DataMap from '~/components/maps/DataMap.vue'
+import locationJson from '#components/analytics/datas/locations.json'
+import StatsCard from '#components/analytics/StatsCard.vue'
+import StatsListElement from '#components/analytics/ui/StatsListElement.vue'
+import DataMap from '#components/maps/DataMap.vue'
 interface JSONData {
     name: string
     visitors: number

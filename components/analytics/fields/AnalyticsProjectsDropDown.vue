@@ -8,9 +8,9 @@
 
 <script lang="ts" setup>
 import type { PropType } from 'vue'
-import AnalyticsProjectModel from '~/models/AnalyticsProjectModel'
-import DropDown from '~/components/fields/DropDown.vue'
-import type { DropDownItem } from '~/components/fields/DropDown.vue'
+import AnalyticsProjectModel from '#models/AnalyticsProjectModel'
+import DropDown from '#components/fields/DropDown.vue'
+import type { DropDownItem } from '#components/fields/DropDown.vue'
 
 /* PROPS */
 const props = defineProps({

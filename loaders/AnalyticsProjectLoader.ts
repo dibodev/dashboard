@@ -1,6 +1,6 @@
-import AnalyticsProjectModel from '~/models/AnalyticsProjectModel'
-import type { AnalyticsProjectWithVisitorCount, AnalyticsProjectCommand } from '~/models/AnalyticsProjectModel'
-import AnalyticsProjectService from '~/services/AnalyticsProjectService'
+import AnalyticsProjectModel from '#models/AnalyticsProjectModel'
+import type { AnalyticsProjectWithVisitorCount, AnalyticsProjectCommand } from '#models/AnalyticsProjectModel'
+import AnalyticsProjectService from '#services/AnalyticsProjectService'
 
 export default class AnalyticsProjectLoader {
     static createMany (analyticsProjects: AnalyticsProjectModel[]) {

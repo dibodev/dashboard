@@ -23,7 +23,7 @@
 
 <script lang="ts" setup>
 import type { PropType } from 'vue'
-import type { TopStats } from '~/models/AnalyticsModel'
+import type { TopStats } from '#models/AnalyticsModel'
 
 const props = defineProps({
   topStats: {

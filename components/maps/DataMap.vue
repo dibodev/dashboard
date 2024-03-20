@@ -31,7 +31,7 @@
 </template>
 
 <script lang="js" setup>
-import Spinner from '~/components/ui/Spinner.vue'
+import Spinner from '#components/ui/Spinner.vue'
 
 const props = defineProps({
     countries: {

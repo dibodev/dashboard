@@ -16,8 +16,8 @@
 </template>
 <script lang="ts" setup>
 import sourcesJson from '../datas/sources.json'
-import StatsCard from '~/components/analytics/StatsCard.vue'
-import StatsListElement from '~/components/analytics/ui/StatsListElement.vue'
+import StatsCard from '#components/analytics/StatsCard.vue'
+import StatsListElement from '#components/analytics/ui/StatsListElement.vue'
 
 interface JSONData {
   name: string

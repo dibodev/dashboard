@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
-import { useAnalyticsStore } from '~/stores/analytics.store'
-import { useRouterStore } from '~/stores/routerStore.store'
-import AnalyticsSocketService from '~/services/AnalyticsSocketService'
+import { useAnalyticsStore } from '#stores/analytics.store'
+import { useRouterStore } from '#stores/routerStore.store'
+import AnalyticsSocketService from '#services/AnalyticsSocketService'
 
 interface PeriodFilter {
     name: string

@@ -19,7 +19,7 @@
 </template>
 
 <script lang="ts" setup>
-import { formatLargeNumber } from '~/tools/number-tools'
+import { formatLargeNumber } from '#tools/number-tools'
 
 /* PROPS */
 const props = defineProps({

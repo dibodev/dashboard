@@ -1,11 +1,11 @@
 import { defineStore } from 'pinia'
-import AnalyticsProjectModel from '~/models/AnalyticsProjectModel'
+import AnalyticsProjectModel from '#models/AnalyticsProjectModel'
 import type {
   AnalyticsProjectCommand,
   AnalyticsProjectWithVisitorCount
-} from '~/models/AnalyticsProjectModel'
-import { useAppStore } from '~/stores/app.store'
-import AnalyticsProjectLoader from '~/loaders/AnalyticsProjectLoader'
+} from '#models/AnalyticsProjectModel'
+import { useAppStore } from '#stores/app.store'
+import AnalyticsProjectLoader from '#loaders/AnalyticsProjectLoader'
 
 export const useAnalyticsProjectStore = defineStore('analyticsProjectStore', {
   state: () => ({

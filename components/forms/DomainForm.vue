@@ -23,7 +23,7 @@
 </template>
 <script lang="ts" setup>
 import { Form, Field, ErrorMessage } from 'vee-validate'
-import { useAnalyticsProjectStore } from '~/stores/analytics.project.store.js'
+import { useAnalyticsProjectStore } from '#stores/analytics.project.store.js'
 
 /* HOOKS */
 const router = useRouter()

@@ -23,14 +23,14 @@
 
 <script lang="ts" setup>
 import { io } from 'socket.io-client'
-import PulsatingCircle from '~/components/ui/PulsatingCircle.vue'
-import TopStats from '~/components/analytics/TopStats.vue'
-import SelectPeriod from '~/components/fields/SelectPeriod.vue'
-import DevicesCard from '~/components/analytics/cards/DevicesCard.vue'
-import VisitorsLineChart from '~/components/charts/VisitorsLineChart/VisitorsLineChart.vue'
-import SourcesCard from '~/components/analytics/cards/SourcesCard.vue'
-import PagesCard from '~/components/analytics/cards/PagesCard.vue'
-import LocationsCard from '~/components/analytics/cards/LocationsCard.vue'
+import PulsatingCircle from '#components/ui/PulsatingCircle.vue'
+import TopStats from '#components/analytics/TopStats.vue'
+import SelectPeriod from '#components/fields/SelectPeriod.vue'
+import DevicesCard from '#components/analytics/cards/DevicesCard.vue'
+import VisitorsLineChart from '#components/charts/VisitorsLineChart/VisitorsLineChart.vue'
+import SourcesCard from '#components/analytics/cards/SourcesCard.vue'
+import PagesCard from '#components/analytics/cards/PagesCard.vue'
+import LocationsCard from '#components/analytics/cards/LocationsCard.vue'
 
 const route = useRoute()
 const domain = computed(() => route.params.domain)

@@ -8,7 +8,7 @@
 
 <script lang="ts" setup>
 import { io } from 'socket.io-client'
-import SelectPeriod from '~/components/fields/SelectPeriod.vue'
+import SelectPeriod from '#components/fields/SelectPeriod.vue'
 
 const route = useRoute()
 const domain = computed(() => route.params.domain)

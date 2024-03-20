@@ -20,11 +20,11 @@
 </template>
 <script lang="ts" setup>
 import type { Ref } from 'vue'
-import { useAnalyticsProjectStore } from '~/stores/analytics.project.store'
-import AnalyticsProjectsDropDown from '~/components/analytics/fields/AnalyticsProjectsDropDown.vue'
-import PulsatingCircle from '~/components/ui/PulsatingCircle.vue'
-import AnalyticsSocketService from '~/services/AnalyticsSocketService'
-import { useAnalyticsRouterStore } from '~/stores/analytics.router.store'
+import { useAnalyticsProjectStore } from '#stores/analytics.project.store'
+import AnalyticsProjectsDropDown from '#components/analytics/fields/AnalyticsProjectsDropDown.vue'
+import PulsatingCircle from '#components/ui/PulsatingCircle.vue'
+import AnalyticsSocketService from '#services/AnalyticsSocketService'
+import { useAnalyticsRouterStore } from '#stores/analytics.router.store'
 
 /* META */
 useHead({

@@ -43,7 +43,7 @@
 </template>
 <script lang="ts" setup>
 /* DATA */
-import Logo from '~/components/ui/Logo.vue'
+import Logo from '#components/ui/Logo.vue'
 
 const links = [
     {

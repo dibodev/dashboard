@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { apiUrl } from '~/utils/app.infos'
+import { apiUrl } from '#utils/app.infos'
 
 export default class BaseApiService {
   protected static client () {

@@ -27,7 +27,7 @@
 
 <script lang="ts" setup>
 /* PROPS */
-import PulsatingCircle from '~/components/ui/PulsatingCircle.vue'
+import PulsatingCircle from '#components/ui/PulsatingCircle.vue'
 
 const props = defineProps({
   domain: {

@@ -4,7 +4,7 @@
    </div>
 </template>
 <script lang="ts" setup>
-import SwitchDarkMode from '~/components/fields/SwitchDarkMode.vue'
+import SwitchDarkMode from '#components/fields/SwitchDarkMode.vue'
 useHead({
   title: 'Paramètres'
 })
