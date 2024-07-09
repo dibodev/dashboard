@@ -1,4 +1,5 @@
-name: 🚀 Build and Deploy Nuxt.js 3 App to ovh vps
+name: 🚀 Build and Deploy Nuxt.js 3 App to OVH VPS
+
 on:
   push:
     branches:
@@ -33,7 +34,7 @@ jobs:
       - name: 📝 Modify package.json
         run: |
           mv .output/server/package.json .output/package.json
-          jq '{name: .name, version: .version, private: .private, dependencies: .bundledDependencies}' .output/package.json > .output/temp.json
+          jq '.dependencies = .bundledDependencies | del(.bundledDependencies)' .output/package.json > .output/temp.json
           mv .output/temp.json .output/package.json
 
       - name: 📝 Create server.js
